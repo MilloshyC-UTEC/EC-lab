@@ -17,9 +17,10 @@ export default {
       albums: [],
     };
   },
-  async created() {
-    //TODO: pass album id
-    const artistAlbums = await spotifyAPI.getArtistAlbums(undefined);
+  async created(id) {
+    //: pass album id
+    const artistAlbums = await spotifyAPI.getArtistAlbums(id);
+    console.log(artistAlbums);
     this.albums = artistAlbums.items;
   },
 };
